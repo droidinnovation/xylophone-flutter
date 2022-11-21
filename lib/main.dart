@@ -9,12 +9,15 @@ class XylophoneApp extends StatelessWidget {
     player.play(AssetSource('note$numberOfSound.wav'));
   }
 
-  Expanded buildKey({MaterialStateProperty<Color> bgColor, int numberSound}) {
+  Expanded buildKey({Color bgColor, int numberSound}) {
     return Expanded(
       child: TextButton(
+        /*
+        MaterialStateProperty<Color> bgColor
         style: ButtonStyle(
           backgroundColor: bgColor,
-        ),
+        ),*/
+        style: TextButton.styleFrom(backgroundColor: bgColor),
         onPressed: () {
           playSoundLocal(numberSound);
         },
@@ -31,27 +34,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.red),
-                  numberSound: 1),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.yellow),
-                  numberSound: 2),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.orange),
-                  numberSound: 3),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.green),
-                  numberSound: 4),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.blue),
-                  numberSound: 5),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.brown),
-                  numberSound: 6),
-              buildKey(
-                  bgColor: MaterialStateProperty.all(Colors.purple),
-                  numberSound: 7),
+              buildKey(bgColor: Colors.red, numberSound: 1),
+              buildKey(bgColor: Colors.yellow, numberSound: 2),
+              buildKey(bgColor: Colors.orange, numberSound: 3),
+              buildKey(bgColor: Colors.green, numberSound: 4),
+              buildKey(bgColor: Colors.teal, numberSound: 5),
+              buildKey(bgColor: Colors.blue, numberSound: 6),
+              buildKey(bgColor: Colors.purple, numberSound: 7),
             ],
           ),
         ),
